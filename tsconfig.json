@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true
+//    "noUnusedParameters": true,
+//    "noUnusedLocals": true
+  },
+  "typeRoots": [
+    "./node_modules/@types",
+    "./types"
+  ]
+}
