@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": false,
     "module": "commonjs",
@@ -10,11 +9,15 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "experimentalDecorators": true
-//    "noUnusedParameters": true,
-//    "noUnusedLocals": true
   },
   "typeRoots": [
     "./node_modules/@types",
     "./types"
+  ],
+  "include": [
+    "components"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

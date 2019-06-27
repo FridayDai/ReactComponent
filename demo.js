@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { message } from "./components/index";
+import { message } from "./components";
 
 ReactDOM.render(
     <div>
