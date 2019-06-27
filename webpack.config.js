@@ -31,7 +31,7 @@ module.exports = {
             {
                 test: /\.(less|scss|css)$/,
                 exclude: ['/node_modules/', DIST],
-                loaders: ['style-loader', 'css-loader?minimize',
+                loaders: ['style-loader', 'css-loader',
                     {
                         'loader': 'postcss-loader',
                         'options': { // 如果没有options这个选项将会报错 No PostCSS Config found
