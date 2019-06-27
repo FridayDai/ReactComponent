@@ -1,1 +1,1 @@
-module.exports = require('./components/index');
+module.exports = require('dist/main');
