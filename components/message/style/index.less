@@ -17,12 +17,12 @@
   &-notice.move-up-enter {
     overflow: hidden;
     animation-name: slideInDown;
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
   }
   &-notice.move-up-leave.move-up-leave-active {
     overflow: hidden;
-    animation-name: rollOut;
-    animation-duration: 1.5s;
+    animation-name: slideOutUp;
+    animation-duration: 0.3s;
   }
 
   &-notice-content {
@@ -32,6 +32,7 @@
     border-radius: 4px;
     padding: 4px 16px;
     pointer-events: all;
+    background-color: #ffffff;
   }
   &-main {
     display: flex;
