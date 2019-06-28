@@ -12,10 +12,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(require("react"));
 const rc_notification_1 = __importDefault(require("rc-notification"));
+const classnames_1 = __importDefault(require("classnames"));
 require("./style/index.less");
 let messageInstance;
 let key = 0;
 let prefixCls = 'react-component-message';
+let transitionName = 'move-up';
 const api = {
     open: notice,
     destroy: () => {
@@ -32,7 +34,8 @@ function getMessageInstance(callback) {
     }
     rc_notification_1.default.newInstance({
         prefixCls: prefixCls,
-        style: { top: '5px', left: '50%' }
+        transitionName: transitionName,
+        style: { top: '0px' }
     }, instance => {
         if (!messageInstance) {
             messageInstance = instance;
@@ -44,10 +47,16 @@ function notice(args) {
     const duration = args.duration !== undefined ? args.duration : 3;
     const type = args.type;
     const id = key++;
+    const prefixClsMain = `${prefixCls}-main`;
+    const renderIcon = (type) => {
+        const iconCls = classnames_1.default(`${prefixClsMain}-${type}`, `icon-${type}`);
+        return React.createElement("i", { className: iconCls });
+    };
     getMessageInstance((instance) => {
         instance.notice({
             key: id,
-            content: (React.createElement("div", { className: `${prefixCls}-${type}` },
+            content: (React.createElement("div", { className: `${prefixClsMain}` },
+                renderIcon(type),
                 React.createElement("span", null, args.content))),
             duration,
             onClose: args.onClose

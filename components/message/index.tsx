@@ -1,10 +1,12 @@
 import * as React from "react";
 import Notification from "rc-notification";
+import classnames from 'classnames';
 import './style/index.less';
 
 let messageInstance: any;
 let key: number = 0;
 let prefixCls: string = 'react-component-message';
+let transitionName = 'move-up';
 
 type configContent = React.ReactNode | string;
 type voidFunction = () => void;
@@ -34,7 +36,8 @@ function getMessageInstance(callback) {
     Notification.newInstance(
         {
             prefixCls: prefixCls,
-            style: { top: '5px', left: '50%' }
+            transitionName: transitionName,
+            style: { top: '0px' }
         }, instance => {
         if(!messageInstance) {
             messageInstance = instance;
@@ -46,12 +49,19 @@ function notice(args: ArgsProps) {
     const duration = args.duration !== undefined ? args.duration : 3;
     const type = args.type;
     const id = key++;
+    const prefixClsMain = `${prefixCls}-main`;
+
+    const renderIcon = (type: string): React.ReactNode => {
+        const iconCls = classnames(`${prefixClsMain}-${type}`, `icon-${type}`);
+        return <i className={iconCls} />;
+    };
 
     getMessageInstance((instance) => {
         instance.notice({
             key: id,
             content: (
-                <div className={`${prefixCls}-${type}`}>
+                <div className={`${prefixClsMain}`}>
+                    {renderIcon(type)}
                     <span>{args.content}</span>
                 </div>
             ),

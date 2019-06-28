@@ -50,7 +50,7 @@ module.exports = {
             },
             {
                 exclude: ['/node_modules/', DIST],
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|jpg|gif|svg|ttf|woff|eot)$/,
                 use: ['url-loader?limit=10000&name=[name]_[hash:8].[ext]']
             }
         ]
