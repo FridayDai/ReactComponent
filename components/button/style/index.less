@@ -1,0 +1,33 @@
+@import '../../style/index';
+
+@react-component-button-prefix: react-component-button;
+
+.@{react-component-button-prefix} {
+  padding: 8px 16px;
+  margin: 0;
+  border: 1px solid #e8e8e8;  //自定义边框
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+
+  &-primary {
+    background-color: @message-info-color;
+    color: white;
+    border: 1px solid @message-info-color;
+  }
+  &-danger {
+    background-color: @message-error-color;
+    color: white;
+    border: 1px solid @message-error-color;
+  }
+  &-link {
+    border: 0;
+  }
+  &-small {
+    font-size: 8px;
+  }
+  &-large {
+    font-size: 24px;
+  }
+}

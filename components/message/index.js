@@ -13,6 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(require("react"));
 const rc_notification_1 = __importDefault(require("rc-notification"));
 const classnames_1 = __importDefault(require("classnames"));
+const index_1 = __importDefault(require("../icon/index"));
 require("./style/index.less");
 let messageInstance;
 let key = 0;
@@ -49,8 +50,8 @@ function notice(args) {
     const id = key++;
     const prefixClsMain = `${prefixCls}-main`;
     const renderIcon = (type) => {
-        const iconCls = classnames_1.default(`${prefixClsMain}-${type}`, `icon-${type}`);
-        return React.createElement("i", { className: iconCls });
+        const iconCls = classnames_1.default(`${prefixClsMain}-${type}`);
+        return (React.createElement(index_1.default, { className: iconCls, type: `icon-${type}` }));
     };
     getMessageInstance((instance) => {
         instance.notice({

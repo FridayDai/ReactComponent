@@ -1,6 +1,7 @@
 import * as React from "react";
 import Notification from "rc-notification";
 import classnames from 'classnames';
+import Icon from '../icon/index';
 import './style/index.less';
 
 let messageInstance: any;
@@ -52,8 +53,8 @@ function notice(args: ArgsProps) {
     const prefixClsMain = `${prefixCls}-main`;
 
     const renderIcon = (type: string): React.ReactNode => {
-        const iconCls = classnames(`${prefixClsMain}-${type}`, `icon-${type}`);
-        return <i className={iconCls} />;
+        const iconCls = classnames(`${prefixClsMain}-${type}`);
+        return (<Icon className={iconCls} type={`icon-${type}`} />);
     };
 
     getMessageInstance((instance) => {
