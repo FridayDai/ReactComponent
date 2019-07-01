@@ -48,9 +48,9 @@ ReactDOM.render(
             </Button>
         </div>
         <div>
-            <Icon type='icon-blocked' />
-            <Icon type='icon-checkmark' />
-            <Icon type='icon-spell-check' />
+            <Icon type='icon-blocked' spin={false} />
+            <Icon type='icon-checkmark' spin/>
+            <Icon type='icon-spell-check' spin={true} />
         </div>
     </div>,
     document.getElementById("container")

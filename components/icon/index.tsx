@@ -8,6 +8,7 @@ interface IconProps {
     customizePrefixCls?: string,
     type: string,
     className?: string,
+    spin?:boolean,
     onClick?: (args:any) => void
 }
 
@@ -28,11 +29,14 @@ class Icon extends React.Component<IconProps> {
             className,
             customizePrefixCls,
             children,
+            spin,
             ...restProps
         } = this.props;
 
         const prefix = customizePrefixCls ? customizePrefixCls : defaultPrefixCls;
-        const classes = classnames(prefix, type, className);
+        const classes = classnames(prefix, type, className, {
+            [`${prefix}-spin`]: spin
+        });
 
         return (
             <i
