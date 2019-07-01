@@ -1,11 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { message, Button, Icon } from "./components/index";
+import { message, Button, Icon, Select } from "./components/index";
+const Option = Select.Option;
 
 ReactDOM.render(
     <div>
-        <Button onClick={() => {
+        <Button disabled onClick={() => {
             message.error('error', 3);
         }}>error</Button>
         <Button onClick={() => {
@@ -51,6 +52,16 @@ ReactDOM.render(
             <Icon type='icon-blocked' spin={false} />
             <Icon type='icon-checkmark' spin/>
             <Icon type='icon-spell-check' spin={true} />
+        </div>
+        <div>
+            <Select
+                allowClear={true}
+                style={{ 'width': '20%' }}
+            >
+                <Option value={'test1'}>test1</Option>
+                <Option value={'test2'}>test2</Option>
+                <Option value={'test3'}>test3</Option>
+            </Select>
         </div>
     </div>,
     document.getElementById("container")
