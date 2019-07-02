@@ -1,0 +1,54 @@
+@import "../../style/index";
+
+@react-component-input-prefix: react-component-input;
+
+.@{react-component-input-prefix} {
+  height: 24px;
+  padding: 4px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+
+  &:focus {
+    border-color: #40a9ff;
+    box-shadow: 0 0 0 2px rgba(24,144,255,0.2);
+  }
+  &-span-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  &-before {
+    display: inline-block;
+    margin-right: 16px;
+  }
+  &-after {
+    display: inline-block;
+    margin-left: 16px;
+  }
+
+  &-icon-wrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    &-hasPrefix input {
+      padding-left: 30px;
+    }
+    &-hasSuffix input {
+      padding-right: 30px;
+    }
+  }
+  &-prefix {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+  }
+  &-suffix {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+  }
+}

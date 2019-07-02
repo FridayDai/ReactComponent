@@ -22,29 +22,32 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(require("react"));
-const classnames_1 = __importDefault(require("classnames"));
+const rc_select_1 = __importStar(require("rc-select"));
 require("./style/index.less");
-let defaultPrefixCls = 'react-component-icon';
-class Icon extends React.Component {
+const classnames_1 = __importDefault(require("classnames"));
+let defaultPrefixCls = 'react-component-select';
+class Select extends React.Component {
     constructor(props) {
         super(props);
-    }
-    handleClick(e) {
-        if (this.props.onClick) {
-            this.props.onClick(e);
-        }
-    }
-    renderIcon() {
-        const _a = this.props, { type, className, customizePrefixCls, children, spin } = _a, restProps = __rest(_a, ["type", "className", "customizePrefixCls", "children", "spin"]);
-        const prefix = customizePrefixCls ? customizePrefixCls : defaultPrefixCls;
-        const classes = classnames_1.default(prefix, type, className, {
-            [`${prefix}-spin`]: spin
-        });
-        return (React.createElement("i", Object.assign({ className: classes, onClick: this.handleClick }, restProps), children));
+        this.rcSelect = null;
+        this.getRef = (node) => {
+            this.rcSelect = node;
+        };
+        this.renderSelect = () => {
+            const _a = this.props, { customizePrefixCls, className, mode } = _a, rest = __rest(_a, ["customizePrefixCls", "className", "mode"]);
+            const prefixCls = customizePrefixCls ? customizePrefixCls : defaultPrefixCls;
+            const cls = classnames_1.default(prefixCls, className);
+            const modeConfig = {
+                multiple: mode === 'multiple',
+                tags: mode === 'tags'
+            };
+            return (React.createElement(rc_select_1.default, Object.assign({ ref: this.getRef, prefixCls: prefixCls, className: cls }, rest, modeConfig)));
+        };
     }
     render() {
-        return (React.createElement(React.Fragment, null, this.renderIcon()));
+        return (React.createElement(React.Fragment, null, this.renderSelect()));
     }
 }
-exports.default = Icon;
+Select.Option = rc_select_1.Option;
+exports.default = Select;
 //# sourceMappingURL=index.js.map

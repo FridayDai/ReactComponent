@@ -6,7 +6,7 @@ This is my customize react component based on typescript(闲来无事，造些�
 ```
 npm i --save react-component-dy
 
-import { message } from 'react-component-dy';
+import { message, Button, Icon, Select } from 'react-component-dy';
 
 message.success('success');
 ```
@@ -14,4 +14,4 @@ message.success('success');
 ## ReadMe
 react16 + typescript + less
 
-目前仅有三个组件 message、Button、Icon
+目前支持的组件： message、Button、Icon、Select

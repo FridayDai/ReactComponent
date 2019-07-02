@@ -1,6 +1,6 @@
 {
   "name": "react-component-dy",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "This is my customize react component based on typescript",
   "main": "index.js",
   "scripts": {
@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "animate.css": "^3.7.2",
+    "omit.js": "^1.0.2",
     "rc-notification": "^3.3.1",
     "rc-select": "^9.1.5"
   },

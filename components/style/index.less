@@ -6,3 +6,21 @@
 @message-error-color: #f5222d;
 @message-warn-color: #faad14;
 @message-info-color: #1890ff;
+@input-placeholder-color: #cccccc;
+
+input {
+  outline: none;
+
+  &::-webkit-input-placeholder {
+    color: @input-placeholder-color;
+  }
+  &::-moz-placeholder {
+    color: @input-placeholder-color;
+  }
+  &::-moz-placeholder {
+    color: @input-placeholder-color;
+  }
+  &::-ms-input-placeholder {
+    color: @input-placeholder-color;
+  }
+}
