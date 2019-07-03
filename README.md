@@ -9,7 +9,7 @@ npm i --save react-component-dy
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { message, Button, Icon, Select, Input } from "./components/index";
+import { message, Button, Icon, Select, Input } from "react-component-dy";
 const Option = Select.Option;
 
 class Demo extends React.Component {
@@ -23,48 +23,13 @@ class Demo extends React.Component {
     render() {
         return(
             <div>
-                <Button disabled onClick={() => {
-                    message.error('error', 3);
-                }}>error</Button>
-                <Button onClick={() => {
-                    message.success('success', 3);
-                }}>success</Button>
-                <Button onClick={() => {
-                    message.info('info', 3);
-                }}>info</Button>
-                <Button onClick={() => {
-                    message.warn('warn', 3);
-                }}>warn</Button>
-                <div>
-                    <Button
-                        size='small'
-                        type='danger'
-                        onClick={() => console.log('defalut')}
-                    >
-                        default
-                    </Button>
-                    <Button
-                        size='large'
-                        onClick={() => console.log('defalut')}
-                    >
-                        large
-                    </Button>
-                    <Button
-                        type='primary'
-                        onClick={(e) => console.log(e)}
-                    >
-                        default
-                    </Button>
-                    <Button
-                        type='link'
-                        href='https://www.baidu.com'
-                    >
-                        link
-                    </Button>
-                    <Button>
-                        customize
-                    </Button>
-                </div>
+                <Button
+                    size='small'
+                    type='danger'
+                    onClick={() => message.info('defalut')}
+                >
+                    default
+                </Button>
                 <div>
                     <Icon type='icon-blocked' spin={false} />
                     <Icon type='icon-checkmark' spin/>

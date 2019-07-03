@@ -109,7 +109,7 @@ export default class Input extends React.Component<InputProps, any> {
             (<span className={`${prefixCls}-suffix`}>
                 <Icon
                     className={allowClear ? `${prefixCls}-suffix-clear` : ''}
-                    type={allowClear ? 'icon-cross' : suffix}
+                    type={allowClear ? 'icon-cross' : suffix as string}
                     onClick={(e) => {
                         const { onPrefixClick, onChange } = this.props;
                         const { value } = this.state;
