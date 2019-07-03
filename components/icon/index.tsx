@@ -6,7 +6,7 @@ let defaultPrefixCls:string = 'react-component-icon';
 
 interface IconProps {
     customizePrefixCls?: string,
-    type: string,
+    type: string | undefined,
     className?: string,
     spin?:boolean,
     onClick?: (args:any) => void

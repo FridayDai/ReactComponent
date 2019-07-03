@@ -72,16 +72,17 @@ class Demo extends React.Component {
                         <Option value={'test3'}>test3</Option>
                     </Select>
                 </div>
-                <div style={{ 'width': '100%' }}>
+                <div style={{ 'width': '50%' }}>
                     <Input
                         placeholder='this is a test'
                         value={this.state.value}
                         onChange={(e) => this.setState({ 'value': e.target.value })}
                         onPressEnter={(e) => console.log(e.currentTarget.value)}
-                        // spanBefore={'https://'}
-                        // spanAfter={'.com'}
-                        // prefix={'icon-success'}
-                        // suffix={'icon-error'}
+                        allowClear={false}
+                        spanBefore={<span>test</span>}
+                        spanAfter={'.com'}
+                        prefix={'icon-success'}
+                        suffix={'icon-error'}
                     />
                 </div>
             </div>

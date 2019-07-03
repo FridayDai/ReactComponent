@@ -14,7 +14,9 @@ interface InputProps {
     spanBefore?: React.ReactNode;
     spanAfter?: React.ReactNode;
     prefix?: string;
+    onPrefixClick?: (value: string) => void,
     suffix?: string;
+    onSuffixClick?: (value: string) => void,
     value: string,
     onChange?: React.ChangeEventHandler<HTMLInputElement>
 }
@@ -87,18 +89,38 @@ export default class Input extends React.Component<InputProps, any> {
     };
 
     renderSuffixAndPrefix = (prefixCls: string, children: React.ReactElement<any>) => {
-        const { prefix, suffix } = this.props;
-
-        if(!prefix && !suffix) return children;
+        const { prefix, suffix, allowClear } = this.props;
 
         const prefixNode = prefix ?
             (<span className={`${prefixCls}-prefix`}>
-                <Icon type={prefix} />
+                <Icon
+                    onClick={() => {
+                        const { onSuffixClick } = this.props;
+                        const { value } = this.state;
+                        if(onSuffixClick) {
+                            onSuffixClick(value);
+                        }
+                    }}
+                    type={prefix}
+                />
             </span>)
             : null;
-        const suffixNode = suffix ?
+        const suffixNode = (suffix || allowClear) ?
             (<span className={`${prefixCls}-suffix`}>
-                <Icon type={suffix} />
+                <Icon
+                    className={allowClear ? `${prefixCls}-suffix-clear` : ''}
+                    type={allowClear ? 'icon-cross' : suffix}
+                    onClick={(e) => {
+                        const { onPrefixClick, onChange } = this.props;
+                        const { value } = this.state;
+                        if(allowClear) {
+                            this.setState({ 'value': '' });
+                            if(onChange) onChange(e);
+                        } else {
+                            if(onPrefixClick) onPrefixClick(value);
+                        }
+                    }}
+                />
             </span>)
             : null;
 
