@@ -9,7 +9,7 @@ npm i --save react-component-dy
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { message, Button, Icon, Select, Input } from "react-component-dy";
+import { message, Button, Icon, Select, Input, Switch } from "react-component-dy";
 const Option = Select.Option;
 
 class Demo extends React.Component {
@@ -23,6 +23,10 @@ class Demo extends React.Component {
     render() {
         return(
             <div>
+                <Switch
+                    checked={this.state.checked}
+                    onChange={(checked) => this.setState({ 'checked': checked })}
+                />
                 <Button
                     size='small'
                     type='danger'
@@ -73,4 +77,4 @@ ReactDOM.render(
 ## ReadMe
 react16 + typescript + less
 
-目前支持的组件： message、Button、Icon、Select、Input
+目前支持的组件： message、Button、Icon、Select、Input、toast

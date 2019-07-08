@@ -1,14 +1,14 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { message, Button, Icon, Select, Input, toast } from "./components/index";
-const Option = Select.Option;
+import { message, Button, Icon, Select, Input, toast, Switch } from "./components/index";
 
 class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            'value': ''
+            'value': '',
+            'checked': false
         };
     }
 
@@ -49,11 +49,17 @@ class Demo extends React.Component {
                         value={this.state.value}
                         onChange={(e) => this.setState({ 'value': e.target.value })}
                         onPressEnter={(e) => console.log(e.currentTarget.value)}
-                        allowClear={false}
+                        allowClear={true}
                         spanBefore={<span>test</span>}
                         spanAfter={'.com'}
                         prefix={'icon-success'}
                         suffix={'icon-error'}
+                    />
+                </div>
+                <div>
+                    <Switch
+                        checked={this.state.checked}
+                        onChange={(checked) => this.setState({ 'checked': checked })}
                     />
                 </div>
             </div>

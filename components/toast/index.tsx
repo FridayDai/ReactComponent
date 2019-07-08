@@ -89,7 +89,7 @@ const toast = {
 ['info', 'success', 'error', 'warn'].forEach((type) => {
     toast[type] = (
             content: React.ReactNode | string,
-            duration: number = 500000,
+            duration: number = 3,
             closable: boolean = true,
             onClose: () => void = () => {},
             maxCount: number = 10
