@@ -59,16 +59,32 @@ class Input extends React.Component {
             }
         };
         this.renderSuffixAndPrefix = (prefixCls, children) => {
-            const { prefix, suffix } = this.props;
-            if (!prefix && !suffix)
-                return children;
+            const { prefix, suffix, allowClear } = this.props;
             const prefixNode = prefix ?
                 (React.createElement("span", { className: `${prefixCls}-prefix` },
-                    React.createElement(icon_1.default, { type: prefix })))
+                    React.createElement(icon_1.default, { onClick: () => {
+                            const { onSuffixClick } = this.props;
+                            const { value } = this.state;
+                            if (onSuffixClick) {
+                                onSuffixClick(value);
+                            }
+                        }, type: prefix })))
                 : null;
-            const suffixNode = suffix ?
+            const suffixNode = (suffix || allowClear) ?
                 (React.createElement("span", { className: `${prefixCls}-suffix` },
-                    React.createElement(icon_1.default, { type: suffix })))
+                    React.createElement(icon_1.default, { className: allowClear ? `${prefixCls}-suffix-clear` : '', type: allowClear ? 'icon-error' : suffix, onClick: (e) => {
+                            const { onPrefixClick, onChange } = this.props;
+                            const { value } = this.state;
+                            if (allowClear) {
+                                this.setState({ 'value': '' });
+                                if (onChange)
+                                    onChange(e);
+                            }
+                            else {
+                                if (onPrefixClick)
+                                    onPrefixClick(value);
+                            }
+                        } })))
                 : null;
             const wrapperPrefixCls = `${prefixCls}-icon-wrapper`;
             const cls = classnames_1.default(wrapperPrefixCls, {
