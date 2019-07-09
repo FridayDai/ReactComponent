@@ -1,8 +1,8 @@
 {
   "name": "react-component-dy",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "This is my customize react component based on typescript",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config webpack.config.js --open",
