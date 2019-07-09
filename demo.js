@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { message, Button, Icon, Select, Input, toast, Switch } from "./components/index";
+import { message, Button, Icon, Select, Input, toast, Switch } from "./index";
 
 class Demo extends React.Component {
     constructor(props) {
