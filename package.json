@@ -1,6 +1,6 @@
 {
   "name": "react-component-dy",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "This is my customize react component based on typescript",
   "main": "index.ts",
   "scripts": {
