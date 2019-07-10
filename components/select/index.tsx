@@ -71,7 +71,7 @@ interface OptionProps {
     className?: string;
     disabled?: boolean;
     key?: string | number;
-    value: string | number;
+    value?: string | number;
     title?: string;
     children?: React.ReactNode;
 }

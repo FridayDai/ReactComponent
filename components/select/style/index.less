@@ -1,3 +1,5 @@
+@import "../../style/index";
+
 @react-component-select-prefix: react-component-select;
 
 @keyframes select-ring {
@@ -84,7 +86,7 @@
   box-sizing: border-box;
   display: block;
   background-color: #fff;
-  border-radius: 6px;
+  //border-radius: 6px;
   border: 1px solid #d9d9d9;
 }
 .react-component-select-selection__placeholder {
@@ -101,15 +103,13 @@
   font-style: normal;
 }
 .react-component-select-focused .react-component-select-selection {
-  border-color: #23c0fa;
-  box-shadow: 0 0 2px rgba(45, 183, 245, 0.8);
+  border-color: @toast-color;
 }
 .react-component-select-enabled .react-component-select-selection:hover {
-  border-color: #23c0fa;
-  box-shadow: 0 0 2px rgba(45, 183, 245, 0.8);
+  border-color: @toast-color;
 }
 .react-component-select-enabled .react-component-select-selection:active {
-  border-color: #2db7f5;
+  border-color: @toast-color;
 }
 .react-component-select-selection--single {
   height: 28px;
@@ -240,7 +240,7 @@
 }
 .react-component-select .react-component-select-selection__choice {
   background-color: #f3f3f3;
-  border-radius: 4px;
+  //border-radius: 4px;
   float: left;
   padding: 0 15px;
   margin-right: 4px;
@@ -339,7 +339,7 @@
   background-color: white;
   border: 1px solid #d9d9d9;
   box-shadow: 0 0px 4px #d9d9d9;
-  border-radius: 4px;
+  //border-radius: 4px;
   box-sizing: border-box;
   z-index: 100;
   left: -9999px;
@@ -390,11 +390,11 @@ li.react-component-select-dropdown-menu-item-disabled {
 }
 li.react-component-select-dropdown-menu-item-selected {
   color: #666;
-  background-color: #ddd;
+  background-color: #e8e8e8;
 }
 li.react-component-select-dropdown-menu-item-active {
-  background-color: #5897fb;
-  color: white;
+  background-color: @toast-color-background;
+  //color: white;
   cursor: pointer;
 }
 li.react-component-select-dropdown-menu-item-divider {

@@ -33,12 +33,11 @@ class Demo extends React.Component {
                     >
                         default
                     </Button>
-                    <Button
-                        type='link'
-                        href='https://www.baidu.com'
-                    >
-                        link
-                    </Button>
+                    <Select mode='tags'>
+                        <Select.Option value={'1'}>1</Select.Option>
+                        <Select.Option value={'2'}>2</Select.Option>
+                        <Select.Option value={'3'}>3</Select.Option>
+                    </Select>
                 </div>
                 <div>
                     <Icon type='icon-blocked' spin={false} />
