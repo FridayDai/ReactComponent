@@ -10,44 +10,48 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import { message, Button, Icon, Select, Input, Switch } from "react-component-dy";
-const Option = Select.Option;
 
 class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            'value': ''
+            'value': '',
+            'checked': false,
+            'checkbox': false
         };
     }
 
     render() {
         return(
             <div>
-                <Switch
-                    checked={this.state.checked}
-                    onChange={(checked) => this.setState({ 'checked': checked })}
-                />
-                <Button
-                    size='small'
-                    type='danger'
-                    onClick={() => message.info('defalut')}
-                >
-                    default
-                </Button>
+                <Checkbox labelMarginLeft={8} checked={this.state.checkbox} onChange={(e) => {
+                    this.setState({'checkbox': e.target.checked});
+                }}>
+                    hahahaha
+                </Checkbox>
+                <Button onClick={() => {
+                    message.error('error', 3);
+                    toast.error('error');
+                }}>error</Button>
+                <div>
+                    <Button
+                        size='small'
+                        type='danger'
+                        onClick={() => console.log('defalut')}
+                    >
+                        default
+                    </Button>
+                    <Button
+                        type='link'
+                        href='https://www.baidu.com'
+                    >
+                        link
+                    </Button>
+                </div>
                 <div>
                     <Icon type='icon-blocked' spin={false} />
                     <Icon type='icon-checkmark' spin/>
                     <Icon type='icon-spell-check' spin={true} />
-                </div>
-                <div>
-                    <Select
-                        allowClear={true}
-                        style={{ 'width': '20%' }}
-                    >
-                        <Option value={'test1'}>test1</Option>
-                        <Option value={'test2'}>test2</Option>
-                        <Option value={'test3'}>test3</Option>
-                    </Select>
                 </div>
                 <div style={{ 'width': '50%' }}>
                     <Input
@@ -55,11 +59,17 @@ class Demo extends React.Component {
                         value={this.state.value}
                         onChange={(e) => this.setState({ 'value': e.target.value })}
                         onPressEnter={(e) => console.log(e.currentTarget.value)}
-                        allowClear={false}
+                        allowClear={true}
                         spanBefore={<span>test</span>}
                         spanAfter={'.com'}
                         prefix={'icon-success'}
                         suffix={'icon-error'}
+                    />
+                </div>
+                <div>
+                    <Switch
+                        checked={this.state.checked}
+                        onChange={(checked) => this.setState({ 'checked': checked })}
                     />
                 </div>
             </div>

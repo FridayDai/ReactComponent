@@ -1,27 +1,29 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { message, Button, Icon, Select, Input, toast, Switch } from "./index";
+import { message, Button, Icon, Select, Input, toast, Switch, Checkbox } from "./index";
 
 class Demo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             'value': '',
-            'checked': false
+            'checked': false,
+            'checkbox': false
         };
     }
 
     render() {
         return(
             <div>
+                <Checkbox labelMarginLeft={8} checked={this.state.checkbox} onChange={(e) => {
+                    this.setState({'checkbox': e.target.checked});
+                }}>
+                    hahahaha
+                </Checkbox>
                 <Button onClick={() => {
-                    // message.error('error', 3);
-                    const msg = ['info', 'success', 'test', 'hahahaha'];
-                    const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-
-                    const index = random(0,3);
-                    toast.error(msg[index]);
+                    message.error('error', 3);
+                    toast.error('error');
                 }}>error</Button>
                 <div>
                     <Button

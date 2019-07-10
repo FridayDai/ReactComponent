@@ -1,0 +1,153 @@
+@import '../../style/index';
+
+@react-component-checkbox-prefix: react-component-checkbox;
+
+.@{react-component-checkbox-prefix} {
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  vertical-align: middle;
+
+  &-input {
+    position: absolute;
+    left: 0;
+    z-index: 9999;
+    cursor: pointer;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  &-input:focus + .react-component-checkbox-inner {
+    border-color: @toast-color;
+  }
+
+  &-inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #d9d9d9;
+    background-color: #ffffff;
+    transition: border-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  &-inner:after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    display: table;
+    width: 5px;
+    height: 8px;
+    border: 2px solid #ffffff;
+    border-top: 0;
+    border-left: 0;
+    content: ' ';
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation-duration: 0.3s;
+    animation-name: amCheckboxOut;
+  }
+
+  &-checked:hover {
+    .react-component-checkbox-inner {
+      border-color: @toast-color;
+    }
+  }
+
+  &-checked {
+    .react-component-checkbox-inner {
+      border-color: @toast-color;
+      background-color: @toast-color;
+    }
+
+    .react-component-checkbox-inner:after {
+      transform: rotate(45deg);
+      position: absolute;
+      left: 4px;
+      top: 1px;
+      display: table;
+      width: 5px;
+      height: 8px;
+      border: 2px solid #ffffff;
+      border-top: 0;
+      border-left: 0;
+      content: ' ';
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      animation-duration: 0.3s;
+      animation-name: amCheckboxOut;
+    }
+  }
+}
+
+.@{react-component-checkbox-prefix}:hover {
+  &-inner {
+    border-color: #3dbcf6;
+  }
+}
+
+@media print {
+  .react-component-checkbox-checked .react-component-checkbox-inner {
+    box-shadow: inset 0 0 0 16px #3dbcf6;
+  }
+}
+.react-component-checkbox-disabled.react-component-checkbox-checked:hover .react-component-checkbox-inner {
+  border-color: #d9d9d9;
+}
+.react-component-checkbox-disabled.react-component-checkbox-checked .react-component-checkbox-inner {
+  background-color: #f3f3f3;
+  border-color: #d9d9d9;
+}
+.react-component-checkbox-disabled.react-component-checkbox-checked .react-component-checkbox-inner:after {
+  animation-name: none;
+  border-color: #cccccc;
+}
+@media print {
+  .react-component-checkbox-disabled.react-component-checkbox-checked .react-component-checkbox-inner {
+    box-shadow: inset 0 0 0 16px #f3f3f3;
+  }
+}
+.react-component-checkbox-disabled:hover .react-component-checkbox-inner {
+  border-color: #d9d9d9;
+}
+.react-component-checkbox-disabled .react-component-checkbox-inner {
+  border-color: #d9d9d9;
+  background-color: #f3f3f3;
+}
+.react-component-checkbox-disabled .react-component-checkbox-inner:after {
+  animation-name: none;
+  border-color: #f3f3f3;
+}
+.react-component-checkbox-disabled .react-component-checkbox-inner-input {
+  cursor: default;
+}
+@keyframes amCheckboxIn {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(0, 0) rotate(45deg);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1) rotate(45deg);
+  }
+}
+@keyframes amCheckboxOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

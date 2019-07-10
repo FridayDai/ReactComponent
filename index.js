@@ -14,4 +14,6 @@ var toast_1 = require("./components/toast");
 exports.toast = toast_1.default;
 var switch_1 = require("./components/switch");
 exports.Switch = switch_1.default;
+var checkbox_1 = require("./components/checkbox");
+exports.Checkbox = checkbox_1.default;
 //# sourceMappingURL=index.js.map
