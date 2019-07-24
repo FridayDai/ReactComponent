@@ -8,7 +8,8 @@
     "strictNullChecks": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "declaration": true
   },
   "typeRoots": [
     "./node_modules/@types",
@@ -18,6 +19,6 @@
 //    "components"
 //  ],
   "exclude": [
-    "node_modules"
+    "node_modules", "dist"
   ]
 }

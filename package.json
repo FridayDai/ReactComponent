@@ -1,13 +1,14 @@
 {
   "name": "react-component-dy",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "description": "This is my customize react component based on typescript",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config webpack.config.js --open",
     "production": "webpack --config webpack.production.config.js",
-    "tsc": "tsc --declaration --jsx react"
+    "tsc": "tsc --jsx react"
   },
   "repository": {
     "type": "git",
