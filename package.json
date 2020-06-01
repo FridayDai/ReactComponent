@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "animate.css": "^3.7.2",
+    "dhook": "0.0.7",
     "omit.js": "^1.0.2",
     "rc-checkbox": "^2.1.7",
     "rc-notification": "^3.3.1",

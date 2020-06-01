@@ -2,6 +2,9 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import { message, Button, Icon, Select, Input, toast, Switch, Checkbox } from "./index";
+import UseRequest from './hook/useRequest/demo';
+import PromiseExectorDemo from './hook/PromiseExector/demo';
+import Foo from 'dhook';
 
 class Demo extends React.Component {
     constructor(props) {
@@ -16,6 +19,10 @@ class Demo extends React.Component {
     render() {
         return(
             <div>
+                <Foo title={'test'} />
+                <div>
+                    <PromiseExectorDemo />
+                </div>
                 <Checkbox labelMarginLeft={8} checked={this.state.checkbox} onChange={(e) => {
                     this.setState({'checkbox': e.target.checked});
                 }}>
